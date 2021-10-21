@@ -1,0 +1,72 @@
+﻿<Page
+    x:Class="MTPgetter.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MTPgetter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid Margin="5,5,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Settings" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" />
+
+        <ComboBox x:Name="uiTimerTime" Margin="5,10,5,10" Header="Check devices every" Grid.Row="1">
+            <ComboBoxItem Content="60 min" />
+            <ComboBoxItem Content="30 min" IsSelected="True" />
+            <ComboBoxItem Content="15 min" />
+        </ComboBox>
+
+        <TextBlock x:Name="uiCurrDevice" Text="Folders for device" Grid.Row="2" />
+        
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Source " />
+            <TextBox x:Name="uiSrcFold" Grid.Column="1" />
+            <Button Content="Browse..." Grid.Column="2" Click="uiBrowseSrc_Click" />
+            <TextBlock Grid.Column="3" Text="Destination " />
+            <TextBox x:Name="uiDstFold" Grid.Column="4" />
+            <Button Content="Browse..." Grid.Column="5" Click="uiBrowseDst_Click" />
+
+            <Button Grid.Row="1" Grid.ColumnSpan="6" HorizontalAlignment="Center" Content="Add" Margin="0,5,0,10"/>
+        </Grid>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Grid.Row="4">
+<!--            <ListView x:Name="uiListItems" Margin="5,5,5,5">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock FontSize="20" Text="{Binding Nazwa, Mode=OneWay }" Tapped="uiShop_Tapped" >
+                                <TextBlock.ContextFlyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem x:Uid="resOpenShopList" Text="Open shopping list" Click="uiShopContext_Click"  />
+                                        <MenuFlyoutItem x:Uid="resRemove" Text="Remove" Click="uiShopRemove_Click" />
+                                    </MenuFlyout>
+                                </TextBlock.ContextFlyout>
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView> -->
+        </ScrollViewer>
+
+    </Grid>
+</Page>

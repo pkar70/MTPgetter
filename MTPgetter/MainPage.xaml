@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="MTPgetter.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MTPgetter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid Margin="5,5,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+        <TextBlock Text="MTP getter" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" />
+        <TextBlock x:Name="uiVersion" Text="version" HorizontalAlignment="Center" />
+        <TextBlock x:Name="uiLog" Grid.Row="2" Margin="5,10,5,0"/>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Refresh" Label="Refresh" x:Name="uiRefresh" Click="uiRefresh_Click"/>
+            <AppBarToggleButton x:Name="uiClockRead" Icon="Clock" Label="Timer" />
+            <AppBarSeparator />
+            <AppBarButton Icon="Setting" Label="Settings" Click="uiSetup_Click" />
+        </CommandBar>
+
+    </Page.BottomAppBar>
+
+</Page>
