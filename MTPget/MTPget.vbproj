@@ -136,6 +136,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MediaDevicesLicense.txt" />
+    <None Include="$(MSBuildThisFileDirectory)_changes.txt" />
+    <None Include="$(MSBuildThisFileDirectory)_tudus.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
